@@ -1,0 +1,204 @@
+.create-block {
+  padding-top: 60px;
+}
+.create-block-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 35px;
+}
+.create-block img {
+  width: 100%;
+  height: 100%;
+}
+.create-content {
+  background-color: #82a9d0;
+  padding: 80px 60px;
+  text-align: center;
+}
+.create-content h3 {
+  font-family: DSCoptic;
+}
+.create-content hr {
+  max-width: 205px;
+  margin: 20px auto;
+}
+.create-content p {
+  padding: 50px 0;
+}
+.relax-block {
+  padding-top: 60px;
+}
+
+.relax-shop-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  padding-top: 60px;
+}
+.product-card-link {
+  text-decoration: none;
+  color: black;
+}
+.product-card-link:hover {
+  text-decoration: none;
+  color: black;
+}
+.magazine-button {
+  padding: 50px 0;
+}
+
+.secret-block {
+  padding-top: 50px;
+  background-color: #82a9d0;
+  padding-bottom: 100px;
+}
+.secret-block h2 {
+  font-weight: 400;
+}
+.secret-block p {
+  padding-top: 45px;
+  width: 45%;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 55px;
+}
+.secret-image-block {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: auto;
+}
+#lionMosaic {
+  grid-area: 1 / 1 / span 2 / span 1;
+}
+#scalesBlocks {
+  grid-area: 1 / 4 / span 2 / span 1;
+}
+.image-block {
+  height: 100%;
+}
+.kid-section {
+  padding-top: 70px;
+}
+.kid-block {
+  padding-top: 55px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+.kid-block p {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+/* background image */
+.kid1-image {
+  height: 584px;
+  background-image: url('../../assets/kid1.jpg');
+  background-position: top !important;
+}
+.kid2-image {
+  height: 584px;
+  background-image: url('../../assets/kid2.jpg');
+  background-position: top !important;
+}
+.teaMosaic {
+  min-height: 478px;
+  background-image: url('../../assets/teaMosaic.png');
+}
+.wallMosaic {
+  min-height: 478px;
+  background-image: url('../../assets/wallMosaic.png');
+}
+.lionMosaic {
+  background-image: url('../../assets/lionMosaic.png');
+  min-width: 300px;
+}
+.lionBlocks {
+  background-image: url('../../assets/lionBlocks.png');
+  min-height: 197px;
+  min-width: 282px;
+}
+.taurusMosaic {
+  min-height: 197px;
+  min-width: 282px;
+  background-image: url('../../assets/taurusMosaic.png');
+}
+.scalesBlocks {
+  min-height: 197px;
+  min-width: 282px;
+  background-image: url('../../assets/scalesBlocks.png');
+}
+.scalesMosaic {
+  min-height: 197px;
+  min-width: 282px;
+  background-image: url('../../assets/scalesMosaic.png');
+}
+.fishMosaic {
+  min-height: 197px;
+  min-width: 282px;
+  background-image: url('../../assets/fishMosaic.png');
+}
+
+@media (max-width: 1250px) {
+  .secret-image-block {
+    grid-template-columns: 1fr 1fr;
+  }
+  #lionMosaic {
+    grid-area: initial;
+  }
+  #scalesBlocks {
+    grid-area: initial;
+  }
+}
+@media (max-width: 730px) {
+  .kid-block {
+    grid-template-columns: 1fr;
+  }
+  .kid-block p {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 630px) {
+  .create-block-content {
+    grid-template-columns: 1fr;
+  }
+  .relax-shop-items {
+    grid-template-columns: 1fr;
+  }
+  .secret-image-block {
+    grid-template-columns: 1fr;
+  }
+  .kid-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .create-content {
+    padding: 80px 40px;
+  }
+  .secret-block p {
+    width: 100%;
+  }
+  .secret-image-block {
+    padding: 0 10px;
+  }
+  .kid-section h2 {
+    padding: 0 20px;
+  }
+  .kid-block {
+    grid-template-columns: 1fr;
+  }
+  .kid-block p {
+    width: 90%;
+    padding: 50px 20px;
+    margin: auto;
+    text-align: center;
+  }
+}

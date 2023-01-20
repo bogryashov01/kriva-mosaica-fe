@@ -1,0 +1,31 @@
+.carousle-container {
+  margin-top: 30px;
+}
+.carousel-title {
+  font-size: 48px;
+  font-family: DSCoptic;
+}
+.carousel-caption {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  left: initial;
+  bottom: initial;
+}
+
+@media (max-width: 700px) {
+  .carousel-title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel-title {
+    font-size: 28px;
+  }
+}
+@media (max-width: 500px) {
+  .carousel-title {
+    font-size: 20px;
+  }
+}

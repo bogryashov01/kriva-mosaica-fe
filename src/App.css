@@ -1,38 +1,149 @@
-.App {
+@font-face {
+  font-family: DSCoptic;
+  src: url('./assets/fonts/DSCoptic/dscoptic.ttf');
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid #004f9f;
+  color: #004f9f;
+  padding: 10px 20px;
+  transition-duration: 0.3s;
+}
+.button:hover {
+  transition-duration: 0.3s;
+  background-color: #f59c00;
+  border: 1px solid #f59c00;
+  color: #fff;
+}
+.button-yellow {
+  background-color: #f59c00;
+  border: 1px solid #f59c00;
+  color: #fff;
+}
+.button-yellow:hover {
+  background-color: #004f9f;
+  border: 1px solid #004f9f;
+  color: #fff;
+}
+
+.button-white {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* position */
+.center {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.end {
+  text-align: end;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* h */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 48px;
+  font-family: Raleway;
+}
+h2 {
+  font-size: 36px;
+  font-family: Raleway;
+  font-weight: 300;
+}
+h3 {
+  font-size: 24px;
+  font-family: Raleway;
+}
+h4 {
+  font-size: 20px;
+  font-family: Raleway;
+}
+p {
+  font-family: Raleway;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* text colors */
+.wht {
+  color: #fff;
+}
+.blue {
+  color: #004f9f;
+}
+
+/* container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* text size */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* card */
+.card {
+  border: 1px solid #000;
+  padding: 10px;
+}
+.card-description {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  padding-top: 27px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.card img {
+  width: 100%;
+}
+.shopping-cart-icon {
+  height: 39px;
+  width: 35px;
+  color: #82a9d0;
+}
+.shopping-cart-icon:hover {
+  color: #f59c00;
+}
+.card-name-price {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
+.card-description-text {
+  padding-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* background-image */
+.background-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 400px) {
+  h1 {
+    font-size: 38px;
   }
-  to {
-    transform: rotate(360deg);
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
   }
 }
