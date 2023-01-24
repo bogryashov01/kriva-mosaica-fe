@@ -109,4 +109,32 @@
     margin-right: 10px;
     width: initial;
   }
+  .navbar-nav .dropdown-menu {
+    position: absolute !important;
+  }
+  .mobile-language-cart-block {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+  }
+  .mobile-toggle-block {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-expand-lg .navbar-nav {
+    padding-top: 0px;
+  }
+  #collasible-nav-dropdown {
+    margin-top: 0px;
+    margin-right: 0px;
+    padding: 0;
+  }
+  .header-cart-button {
+    margin: 0 10px;
+  }
+  .navbar-collapse {
+    text-align: center;
+  }
+  .nav-link {
+    display: initial !important;
+  }
 }

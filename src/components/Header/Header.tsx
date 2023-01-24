@@ -15,6 +15,8 @@ import './header.css';
 
 function Header() {
   const cartTotal: any = useSelector(cartTotalSelector);
+  const isMobile = window.screen.width < 991 ? true : false;
+  console.log(isMobile);
   const { t, i18n } = useTranslation();
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
@@ -27,7 +29,31 @@ function Header() {
             <img src={Logo} alt="logo" />
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <div className="mobile-toggle-block">
+          {isMobile && (
+            <Nav className="mobile-language-cart-block">
+              <NavDropdown title={i18n.language} id="collasible-nav-dropdown" className="uppercase">
+                <NavDropdown.Item onClick={() => changeLanguage('uk')}>
+                  UK {<img src={ukraineFlag} alt="" className="icon" />}
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => changeLanguage('en')}>
+                  EN {<img src={ukFlag} alt="" className="icon" />}
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Link to="/shopping-cart" className="cartBlock">
+                <button className="header-cart-button">
+                  <MdShoppingCart />
+                </button>
+                {cartTotal >= 1 ? (
+                  <div className="total-cart">
+                    <p>{cartTotal}</p>
+                  </div>
+                ) : null}
+              </Link>
+            </Nav>
+          )}
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        </div>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">
@@ -51,26 +77,28 @@ function Header() {
               </Link>
             </Nav.Link>
           </Nav>
-          <Nav>
-            <NavDropdown title={i18n.language} id="collasible-nav-dropdown" className="uppercase">
-              <NavDropdown.Item onClick={() => changeLanguage('uk')}>
-                UK {<img src={ukraineFlag} alt="" className="icon" />}
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => changeLanguage('en')}>
-                EN {<img src={ukFlag} alt="" className="icon" />}
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Link to="/shopping-cart" className="cartBlock">
-              <button className="header-cart-button">
-                <MdShoppingCart />
-              </button>
-              {cartTotal >= 1 ? (
-                <div className="total-cart">
-                  <p>{cartTotal}</p>
-                </div>
-              ) : null}
-            </Link>
-          </Nav>
+          {isMobile === false ? (
+            <Nav>
+              <NavDropdown title={i18n.language} id="collasible-nav-dropdown" className="uppercase">
+                <NavDropdown.Item onClick={() => changeLanguage('uk')}>
+                  UK {<img src={ukraineFlag} alt="" className="icon" />}
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => changeLanguage('en')}>
+                  EN {<img src={ukFlag} alt="" className="icon" />}
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Link to="/shopping-cart" className="cartBlock">
+                <button className="header-cart-button">
+                  <MdShoppingCart />
+                </button>
+                {cartTotal >= 1 ? (
+                  <div className="total-cart">
+                    <p>{cartTotal}</p>
+                  </div>
+                ) : null}
+              </Link>
+            </Nav>
+          ) : null}
         </Navbar.Collapse>
       </Container>
     </Navbar>
