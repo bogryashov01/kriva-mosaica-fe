@@ -6,9 +6,10 @@ import { addToCart } from '../../redux/cartSlice';
 import ShopPage from './ShopPage';
 
 function ShopPageContainer() {
-  const [data, setData] = useState([]);
-  const [activeCategory, setActiveCategory] = useState('All');
   const dispatch = useDispatch();
+  const [data, setData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = [
     {
@@ -31,7 +32,10 @@ function ShopPageContainer() {
 
   const handleAddToCart = (product: any) => {
     dispatch(addToCart(product));
+    setIsOpen(true);
   };
+
+  const handleClose = () => setIsOpen(false);
 
   const onCategoryChoose = (category: string) => {
     fetch(`${URL}/get-all-items`, {})
@@ -63,6 +67,8 @@ function ShopPageContainer() {
       categories={categories}
       onCategoryChoose={onCategoryChoose}
       activeCategory={activeCategory}
+      isOpen={isOpen}
+      handleClose={handleClose}
     />
   );
 }

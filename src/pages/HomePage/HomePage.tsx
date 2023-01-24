@@ -5,9 +5,17 @@ import CarouselBlock from '../../components/Carousel/Carousel';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './HomePage.css';
+import ModalContainer from '../../components/Modal/ModalContainer';
 
-function HomePage(props: { data: any; handleAddToCart(item: any): any; t: any; i18n: any }) {
-  const { data, handleAddToCart, t, i18n } = props;
+function HomePage(props: {
+  data: any;
+  handleAddToCart(item: any): any;
+  t: any;
+  i18n: any;
+  isOpen: boolean;
+  handleClose: any;
+}) {
+  const { data, handleAddToCart, t, i18n, isOpen, handleClose } = props;
   return (
     <>
       <CarouselBlock />
@@ -66,6 +74,7 @@ function HomePage(props: { data: any; handleAddToCart(item: any): any; t: any; i
             },
           )}
         </div>
+        <ModalContainer isOpen={isOpen} handleClose={handleClose} />
         <div className="center magazine-button">
           <Link to={'/shop'}>
             <button className="button center">

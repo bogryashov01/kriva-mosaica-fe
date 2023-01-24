@@ -80,7 +80,7 @@ function Checkout(props: {
             }}
             // validationSchema={validationSchema}
           >
-            <FormikStep label={t('personal-info')}>
+            <FormikStep label={t('personal-info-tab')}>
               <Box className="input">
                 <Field fullWidth name="email" component={TextField} label={t('email')} />
               </Box>

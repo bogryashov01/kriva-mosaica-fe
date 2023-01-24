@@ -19,7 +19,7 @@
     "@types/react-dom": "^18.0.0",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
-    "firebase": "^9.15.0",
+    "firebase": "^9.16.0",
     "firebase-tools": "^11.20.0",
     "formik": "^2.2.9",
     "formik-material-ui": "^4.0.0-alpha.2",

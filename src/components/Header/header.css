@@ -103,3 +103,10 @@
 .icon {
   width: 30px;
 }
+
+@media (max-width: 991px) {
+  .header-cart-button {
+    margin-right: 10px;
+    width: initial;
+  }
+}

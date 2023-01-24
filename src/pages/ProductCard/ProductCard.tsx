@@ -1,8 +1,16 @@
 import Carousel from 'react-bootstrap/Carousel';
+import ModalContainer from '../../components/Modal/ModalContainer';
 import './ProductCard.css';
 
-function ProductCard(props: { product: any; handleAddToCart(item: any): any; i18n: any; t: any }) {
-  const { product, handleAddToCart, t, i18n } = props;
+function ProductCard(props: {
+  product: any;
+  handleAddToCart(item: any): any;
+  i18n: any;
+  t: any;
+  handleClose: any;
+  isOpen: boolean;
+}) {
+  const { product, handleAddToCart, t, i18n, handleClose, isOpen } = props;
 
   return (
     <div className="container product-item">
@@ -42,6 +50,7 @@ function ProductCard(props: { product: any; handleAddToCart(item: any): any; i18
           <p>{t('delivery-ukrp')}</p>
         </div>
       </div>
+      <ModalContainer handleClose={handleClose} isOpen={isOpen} />
     </div>
   );
 }

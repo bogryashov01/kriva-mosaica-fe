@@ -85,4 +85,7 @@
     display: flex;
     justify-content: center;
   }
+  .cart-container {
+    padding: 50px 20px;
+  }
 }

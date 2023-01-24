@@ -3,9 +3,18 @@ import { Link } from 'react-router-dom';
 import i18n from '../../i18n';
 import './ShopPage.css';
 import '../../App.css';
+import ModalContainer from '../../components/Modal/ModalContainer';
 
 function ShopPage(props: any) {
-  const { data, handleAddToCart, categories, onCategoryChoose, activeCategory } = props;
+  const {
+    data,
+    handleAddToCart,
+    categories,
+    onCategoryChoose,
+    activeCategory,
+    isOpen,
+    handleClose,
+  } = props;
   return (
     <div className="shop-container">
       <div className="sidebar">
@@ -69,6 +78,7 @@ function ShopPage(props: any) {
           },
         )}
       </div>
+      <ModalContainer isOpen={isOpen} handleClose={handleClose} />
     </div>
   );
 }

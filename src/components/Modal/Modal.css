@@ -1,0 +1,47 @@
+.MuiModal-root {
+  overflow-y: scroll;
+}
+.modal-container {
+  display: grid;
+  max-width: 1200px;
+  background-color: white;
+  margin: 120px auto;
+  border-radius: 10px;
+  padding: 30px;
+}
+.modal-title {
+  padding-left: 20px;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+@media (max-width: 1200px) {
+  .modal-container {
+    margin: 120px 20px;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .modal-title {
+    padding-left: 0px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 555px) {
+  .modal-container {
+    margin: 20px 20px;
+    border-radius: 10px;
+  }
+  .button-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+  }
+  .button-container a {
+    margin: auto;
+  }
+}

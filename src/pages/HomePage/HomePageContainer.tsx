@@ -7,12 +7,17 @@ import { URL } from '../../constants/constants';
 import HomePage from './HomePage';
 
 function HomePageContainer() {
-  const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
+  const [data, setData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleAddToCart = (product: any) => {
     dispatch(addToCart(product));
+    setIsOpen(true);
   };
+
+  const handleClose = () => setIsOpen(false);
 
   useEffect(() => {
     fetch(`${URL}/get-relax-items`, {
@@ -28,6 +33,15 @@ function HomePageContainer() {
       });
   }, []);
 
-  return <HomePage data={data} handleAddToCart={handleAddToCart} t={t} i18n={i18n} />;
+  return (
+    <HomePage
+      data={data}
+      handleAddToCart={handleAddToCart}
+      t={t}
+      i18n={i18n}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    />
+  );
 }
 export default HomePageContainer;
