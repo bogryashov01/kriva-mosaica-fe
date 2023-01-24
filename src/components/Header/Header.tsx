@@ -12,15 +12,26 @@ import { MdShoppingCart } from 'react-icons/md';
 import { ukraineFlag, ukFlag } from '../../assets/icons/icons';
 
 import './header.css';
+import { useEffect, useState } from 'react';
 
 function Header() {
   const cartTotal: any = useSelector(cartTotalSelector);
-  const isMobile = window.screen.width < 991 ? true : false;
-  console.log(isMobile);
+  const [width, setWidth] = useState(0);
   const { t, i18n } = useTranslation();
+  const isMobile = width <= 991 ? true : false;
+
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Navbar collapseOnSelect expand="lg">
       <Container className="container header-container">
@@ -30,7 +41,7 @@ function Header() {
           </Link>
         </Navbar.Brand>
         <div className="mobile-toggle-block">
-          {isMobile && (
+          {isMobile === true ? (
             <Nav className="mobile-language-cart-block">
               <NavDropdown title={i18n.language} id="collasible-nav-dropdown" className="uppercase">
                 <NavDropdown.Item onClick={() => changeLanguage('uk')}>
@@ -51,7 +62,7 @@ function Header() {
                 ) : null}
               </Link>
             </Nav>
-          )}
+          ) : null}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         </div>
         <Navbar.Collapse id="responsive-navbar-nav">
