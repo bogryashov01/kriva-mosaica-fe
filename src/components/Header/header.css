@@ -105,6 +105,10 @@
 }
 
 @media (max-width: 991px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+  }
   .header-cart-button {
     margin-right: 10px;
     width: initial;
@@ -115,10 +119,12 @@
   .mobile-language-cart-block {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
+    margin-right: 10px;
   }
   .mobile-toggle-block {
     display: flex;
     align-items: center;
+    margin-top: 20px;
   }
   .navbar-expand-lg .navbar-nav {
     padding-top: 0px;
@@ -136,5 +142,9 @@
   }
   .nav-link {
     display: initial !important;
+  }
+  .total-cart {
+    top: -14px;
+    right: 6px;
   }
 }

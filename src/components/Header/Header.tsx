@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
 
 function Header() {
   const cartTotal: any = useSelector(cartTotalSelector);
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
   const { t, i18n } = useTranslation();
   const isMobile = width <= 991 ? true : false;
 
