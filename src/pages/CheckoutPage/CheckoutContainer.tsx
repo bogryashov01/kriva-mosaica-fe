@@ -1,8 +1,9 @@
-import axios from 'axios';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 import { clear } from '../../redux/cartSlice';
 import Checkout from './Checkout';
@@ -15,8 +16,10 @@ function CheckoutContainer() {
   const { i18n, t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [phone, setPhone] = useState(0);
   const cartItems = useSelector((state: any) => state.cart);
   const cartTotal: any = useSelector(cartTotalSelector);
+
   const totalPrice = cartItems.reduce(
     (total: number, current: { price_en: number; price_ukr: number; quantity: number }) =>
       (total += (i18n.language === 'en' ? current.price_en : current.price_ukr) * current.quantity),
@@ -96,6 +99,8 @@ function CheckoutContainer() {
       totalPrice={totalPrice}
       onSubmitHandler={onSubmitHandler}
       totalCart={totalCart}
+      phone={phone}
+      handleChange={setPhone}
     />
   );
 }

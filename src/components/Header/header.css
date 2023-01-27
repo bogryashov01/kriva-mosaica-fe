@@ -120,11 +120,14 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     margin-right: 10px;
+    align-items: center;
   }
   .mobile-toggle-block {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    width: 100%;
+    justify-content: space-between;
   }
   .navbar-expand-lg .navbar-nav {
     padding-top: 0px;

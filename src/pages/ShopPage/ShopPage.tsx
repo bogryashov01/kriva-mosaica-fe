@@ -1,9 +1,12 @@
 import { MdShoppingCart } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
 import i18n from '../../i18n';
-import './ShopPage.css';
-import '../../App.css';
+
 import ModalContainer from '../../components/Modal/ModalContainer';
+
+import '../../App.css';
+import './ShopPage.css';
 
 function ShopPage(props: any) {
   const {
@@ -14,6 +17,8 @@ function ShopPage(props: any) {
     activeCategory,
     isOpen,
     handleClose,
+    t,
+    loading,
   } = props;
   return (
     <div className="shop-container">
@@ -23,7 +28,7 @@ function ShopPage(props: any) {
             onCategoryChoose('All');
           }}
           className={activeCategory === 'All' ? 'catalog-item active' : 'catalog-item'}>
-          <h4>Все товары </h4>
+          <h4>{t('category-all')} </h4>
         </div>
         {categories.map((category: any, index: number) => {
           return (
@@ -38,46 +43,52 @@ function ShopPage(props: any) {
           );
         })}
       </div>
-      <div className="products-container">
-        {data.map(
-          (item: {
-            id: string;
-            imageUrl: string | undefined;
-            name_ukr: string;
-            name_en: string;
-            price_en: number;
-            price_ukr: number;
-            description_en: string;
-            description_ukr: string;
-          }) => {
-            return (
-              <div className="card" key={item.id}>
-                <Link to={`/product-item/${item.id.substring(1)}`} className="product-card-link">
-                  <img src={item.imageUrl} alt="" />
-                </Link>
-                <div className="card-description">
-                  <div>
-                    <div className="card-name-price">
-                      <p>{i18n.language === 'en' ? item.name_en : item.name_ukr}</p>
-                      <p className="end">
-                        <strong>
-                          {i18n.language === 'en' ? item.price_en + '  €' : item.price_ukr + ' ₴'}
-                        </strong>
+      {loading ? (
+        <div className="circular-progress">
+          <CircularProgress />
+        </div>
+      ) : (
+        <div className="products-container">
+          {data.map(
+            (item: {
+              id: string;
+              imageUrl: string | undefined;
+              name_ukr: string;
+              name_en: string;
+              price_en: number;
+              price_ukr: number;
+              description_en: string;
+              description_ukr: string;
+            }) => {
+              return (
+                <div className="card" key={item.id}>
+                  <Link to={`/product-item/${item.id}`} className="product-card-link">
+                    <img src={item.imageUrl} alt="" />
+                  </Link>
+                  <div className="card-description">
+                    <div>
+                      <div className="card-name-price">
+                        <p>{i18n.language === 'en' ? item.name_en : item.name_ukr}</p>
+                        <p className="end">
+                          <strong>
+                            {i18n.language === 'en' ? item.price_en + '  €' : item.price_ukr + ' ₴'}
+                          </strong>
+                        </p>
+                      </div>
+                      <p className="card-description-text">
+                        {i18n.language === 'en' ? item.description_en : item.description_ukr}
                       </p>
                     </div>
-                    <p className="card-description-text">
-                      {i18n.language === 'en' ? item.description_en : item.description_ukr}
+                    <p style={{ textAlign: 'end' }} onClick={() => handleAddToCart(item)}>
+                      <MdShoppingCart className="shopping-cart-icon" />
                     </p>
                   </div>
-                  <p style={{ textAlign: 'end' }} onClick={() => handleAddToCart(item)}>
-                    <MdShoppingCart className="shopping-cart-icon" />
-                  </p>
                 </div>
-              </div>
-            );
-          },
-        )}
-      </div>
+              );
+            },
+          )}
+        </div>
+      )}
       <ModalContainer isOpen={isOpen} handleClose={handleClose} />
     </div>
   );

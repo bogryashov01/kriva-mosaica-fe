@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MdShoppingCart } from 'react-icons/md';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import CarouselBlock from '../../components/Carousel/Carousel';
 
@@ -14,8 +15,9 @@ function HomePage(props: {
   i18n: any;
   isOpen: boolean;
   handleClose: any;
+  loading: boolean;
 }) {
-  const { data, handleAddToCart, t, i18n, isOpen, handleClose } = props;
+  const { data, handleAddToCart, t, i18n, isOpen, handleClose, loading } = props;
   return (
     <>
       <CarouselBlock />
@@ -34,46 +36,54 @@ function HomePage(props: {
       </div>
       <div className="container relax-block">
         <h2 className="center blue">{t('relax-title')}</h2>
-        <div className="relax-shop-items">
-          {data.map(
-            (item: {
-              id: string;
-              imageUrl: string | undefined;
-              name_ukr: string;
-              name_en: string;
-              price_en: number;
-              price_ukr: number;
-              description_en: string;
-              description_ukr: string;
-            }) => {
-              return (
-                <div className="card" key={item.id}>
-                  <Link to={`/product-item/${item.id.substring(1)}`} className="product-card-link">
-                    <img src={item.imageUrl} alt="" />
-                  </Link>
-                  <div className="card-description">
-                    <div>
-                      <div className="card-name-price">
-                        <p>{i18n.language === 'en' ? item.name_en : item.name_ukr}</p>
-                        <p className="end">
-                          <strong>
-                            {i18n.language === 'en' ? item.price_en + '  €' : item.price_ukr + ' ₴'}
-                          </strong>
+        {loading ? (
+          <div className="circular-progress">
+            <CircularProgress />
+          </div>
+        ) : (
+          <div className="relax-shop-items">
+            {data.map(
+              (item: {
+                id: string;
+                imageUrl: string | undefined;
+                name_ukr: string;
+                name_en: string;
+                price_en: number;
+                price_ukr: number;
+                description_en: string;
+                description_ukr: string;
+              }) => {
+                return (
+                  <div className="card" key={item.id}>
+                    <Link to={`/product-item/${item.id}`} className="product-card-link">
+                      <img src={item.imageUrl} alt="" />
+                    </Link>
+                    <div className="card-description">
+                      <div>
+                        <div className="card-name-price">
+                          <p>{i18n.language === 'en' ? item.name_en : item.name_ukr}</p>
+                          <p className="end">
+                            <strong>
+                              {i18n.language === 'en'
+                                ? item.price_en + '  €'
+                                : item.price_ukr + ' ₴'}
+                            </strong>
+                          </p>
+                        </div>
+                        <p className="card-description-text">
+                          {i18n.language === 'en' ? item.description_en : item.description_ukr}
                         </p>
                       </div>
-                      <p className="card-description-text">
-                        {i18n.language === 'en' ? item.description_en : item.description_ukr}
+                      <p style={{ textAlign: 'end' }} onClick={() => handleAddToCart(item)}>
+                        <MdShoppingCart className="shopping-cart-icon" />
                       </p>
                     </div>
-                    <p style={{ textAlign: 'end' }} onClick={() => handleAddToCart(item)}>
-                      <MdShoppingCart className="shopping-cart-icon" />
-                    </p>
                   </div>
-                </div>
-              );
-            },
-          )}
-        </div>
+                );
+              },
+            )}
+          </div>
+        )}
         <ModalContainer isOpen={isOpen} handleClose={handleClose} />
         <div className="center magazine-button">
           <Link to={'/shop'}>

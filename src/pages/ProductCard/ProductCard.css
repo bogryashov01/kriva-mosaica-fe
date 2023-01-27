@@ -1,8 +1,18 @@
+.circular-progress {
+  text-align: center;
+  padding-top: 50px;
+  justify-self: center;
+  grid-template-columns: 1fr !important;
+}
+.circular-container {
+  min-height: 70vh;
+}
 .product-item {
   padding-top: 92px;
   padding-bottom: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
 }
 .image {
   width: 100%;
@@ -51,7 +61,7 @@
 
 @media (max-width: 500px) {
   .image {
-    width: 90%;
+    /* width: 90%; */
     margin: auto;
   }
   .product-button {

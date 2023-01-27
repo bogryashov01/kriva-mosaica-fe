@@ -4,6 +4,8 @@ import { Field } from 'formik';
 import { TextField } from 'formik-material-ui';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 import FormikStepper from '../../components/FormikStepper/FormikStepper';
 import FormikStep from '../../components/FormikStepper/FormikStep';
@@ -18,8 +20,20 @@ function Checkout(props: {
   t: any;
   i18n: any;
   onSubmitHandler: any;
+  phone: any;
+  handleChange: any;
 }) {
-  const { i18n, t, cartItems, cartTotal, totalPrice, onSubmitHandler, totalCart } = props;
+  const {
+    i18n,
+    handleChange,
+    t,
+    cartItems,
+    phone,
+    cartTotal,
+    totalPrice,
+    onSubmitHandler,
+    totalCart,
+  } = props;
   const navigate = useNavigate();
 
   const redirect = () => {
@@ -66,7 +80,7 @@ function Checkout(props: {
               textMessage += `<b>Дата : ${new Date().toLocaleDateString()} </b>\n`;
               textMessage += `<b>Імя : ${values.firstName} </b>\n`;
               textMessage += `<b>Прізвище : ${values.lastName} </b>\n`;
-              textMessage += `<b>Телефон : ${values.phone} </b>\n`;
+              textMessage += `<b>Телефон : ${phone.phone} </b>\n`;
               textMessage += `<b>Місто : ${values.city} </b>\n`;
               textMessage += `<b>Країна : ${values.country} </b>\n`;
               textMessage += `<b>Поштовий перевізник : ${values.poshta} </b>\n`;
@@ -107,9 +121,15 @@ function Checkout(props: {
                   </label>
                 </Box>
               </div>
-              <Box className="input">
-                <Field fullWidth name="phone" component={TextField} label={t('phone')} />
-              </Box>
+              <PhoneInput
+                inputProps={{
+                  name: 'phone',
+                  required: true,
+                  autoFocus: true,
+                }}
+                country={'ua'}
+                onChange={(phone) => handleChange({ phone })}
+              />
               <Box className="input">
                 <Field fullWidth name="city" component={TextField} label={t('city')} />
               </Box>

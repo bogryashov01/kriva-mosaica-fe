@@ -1,6 +1,14 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { useTranslation } from 'react-i18next';
-import { Carousel1, Carousel2, Carousel3, Carousel4, Carousel5, Carousel6 } from '../../assets';
+import {
+  Carousel1,
+  Carousel2,
+  Carousel3,
+  Carousel4,
+  Carousel5,
+  Carousel6,
+  Carousel7,
+} from '../../assets';
 
 import './carousel.css';
 
@@ -30,6 +38,9 @@ function CarouselBlock() {
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={Carousel6} alt="First slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Carousel7} alt="First slide" />
         </Carousel.Item>
       </Carousel>
     </div>

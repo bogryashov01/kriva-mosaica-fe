@@ -46,5 +46,11 @@
   "confirm-button": "Confirm",
   "next-button": "next",
   "notification-success": "Success",
-  "notification-error": "Error"
+  "notification-error": "Error",
+  "category-all": "All products",
+  "category-polony": "Polony",
+  "category-zodiac-signs": "Zodiac Signs",
+  "category-guardian-angels": "Guardian Angels",
+  "category-fairy-animals": "The fairy animals",
+  "category-fairy-animals-small": "The fairy animals(small)"
 }

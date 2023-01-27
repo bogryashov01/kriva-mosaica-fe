@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  padding: 100px 0px;
+  padding: 100px 20px;
   max-width: 1200px;
   margin: auto;
   min-height: 70vh;
@@ -42,6 +42,7 @@
 .checkout-item-description {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .price-container {
   display: grid;
@@ -63,4 +64,25 @@
 }
 .checkout-text {
   padding: 20px 0;
+}
+
+.react-tel-input .form-control {
+  width: 100%;
+  height: 100%;
+  padding: 16.5px 50px;
+  margin-bottom: 20px !important;
+}
+
+@media (max-width: 900px) {
+  .checkout-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
+  }
+  .checkout-item-description {
+    flex-direction: column;
+  }
+  .MuiStepper-horizontal {
+    display: none !important;
+  }
 }

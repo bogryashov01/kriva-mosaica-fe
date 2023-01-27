@@ -15,6 +15,8 @@ import carousel3 from './fon3.png';
 import carousel4 from './fon4.png';
 import carousel5 from './fon5.png';
 import carousel6 from './fon6.png';
+import carousel7 from './fon7.png';
+import boss from './boss.png';
 
 export const Logo = logo;
 export const LogoWht = logoWht;
@@ -33,3 +35,5 @@ export const Carousel3 = carousel3;
 export const Carousel4 = carousel4;
 export const Carousel5 = carousel5;
 export const Carousel6 = carousel6;
+export const Carousel7 = carousel7;
+export const Boss = boss;

@@ -1,0 +1,51 @@
+.master-class-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 20px;
+  min-height: 70vh;
+}
+.master-class-content {
+  padding: 100px;
+}
+.master-class-title {
+  padding-bottom: 55px;
+  font-size: 24px;
+}
+.master-class-text {
+  padding-bottom: 20px;
+}
+.background-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.master-class {
+  height: 584px;
+  background-image: url('../../assets/master-class.jpg');
+}
+
+@media (max-width: 993px) {
+  .master-class-content {
+    padding: 50px;
+  }
+  .master-class-content p {
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  .master-class-container {
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
+    min-height: 70vh;
+  }
+  .master-class-content {
+    padding: 0 0 50px 0;
+    grid-area: 1;
+  }
+  .master-class-title {
+    text-align: center;
+  }
+}

@@ -42,28 +42,35 @@ function Header() {
         </Navbar.Brand>
         <div className="mobile-toggle-block">
           {isMobile === true ? (
-            <Nav className="mobile-language-cart-block">
-              <NavDropdown title={i18n.language} id="collasible-nav-dropdown" className="uppercase">
-                <NavDropdown.Item onClick={() => changeLanguage('uk')}>
-                  UK {<img src={ukraineFlag} alt="" className="icon" />}
-                </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => changeLanguage('en')}>
-                  EN {<img src={ukFlag} alt="" className="icon" />}
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Link to="/shopping-cart" className="cartBlock">
-                <button className="header-cart-button">
-                  <MdShoppingCart />
-                </button>
-                {cartTotal >= 1 ? (
-                  <div className="total-cart">
-                    <p>{cartTotal}</p>
-                  </div>
-                ) : null}
-              </Link>
-            </Nav>
+            <>
+              <Nav>
+                <Link to="/shopping-cart" className="cartBlock">
+                  <button className="header-cart-button">
+                    <MdShoppingCart />
+                  </button>
+                  {cartTotal >= 1 ? (
+                    <div className="total-cart">
+                      <p>{cartTotal}</p>
+                    </div>
+                  ) : null}
+                </Link>
+              </Nav>
+              <div className="mobile-language-cart-block">
+                <NavDropdown
+                  title={i18n.language}
+                  id="collasible-nav-dropdown"
+                  className="uppercase">
+                  <NavDropdown.Item onClick={() => changeLanguage('uk')}>
+                    UK {<img src={ukraineFlag} alt="" className="icon" />}
+                  </NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => changeLanguage('en')}>
+                    EN {<img src={ukFlag} alt="" className="icon" />}
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              </div>
+            </>
           ) : null}
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         </div>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -78,7 +85,7 @@ function Header() {
               </Link>
             </Nav.Link>
             <Nav.Link href="#pricing">
-              <Link to="/class" className="header-link">
+              <Link to="/master-class" className="header-link">
                 {t('header-tab-master-class')}
               </Link>
             </Nav.Link>

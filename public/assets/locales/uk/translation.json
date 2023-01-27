@@ -46,5 +46,11 @@
   "confirm-button": "Підтвердити",
   "next-button": "Вперед",
   "notification-success": "Успішно",
-  "notification-error": "Сталася помилка"
+  "notification-error": "Сталася помилка",
+  "category-all": "Усі товари",
+  "category-polony": "Полонина",
+  "category-zodiac-signs": "Знаки зодіаку",
+  "category-guardian-angels": "Ангели-охоронці",
+  "category-fairy-animals": "Казкові звірі",
+  "category-fairy-animals-small": "Казкові звірі(малі)"
 }

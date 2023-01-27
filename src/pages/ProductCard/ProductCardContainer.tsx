@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { URL } from '../../constants/constants';
 import { addToCart } from '../../redux/cartSlice';
 import ProductCard from './ProductCard';
+import { setStartLoading, setStopLoading } from '../../redux/loadingSlice';
 
 function ProductCardContainer() {
   const dispatch = useDispatch();
@@ -13,6 +14,8 @@ function ProductCardContainer() {
   const { t, i18n } = useTranslation();
   const [mosaic, setMosaic] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const loading = useSelector((state: any) => state.loading.loading);
+  console.log(loading);
 
   const handleAddToCart = (product: any) => {
     dispatch(addToCart(product));
@@ -22,15 +25,18 @@ function ProductCardContainer() {
   const handleClose = () => setIsOpen(false);
 
   useEffect(() => {
+    dispatch(setStartLoading());
     fetch(`${URL}/get-mosaic/${id}`, {})
       .then((res) => res.json())
       .then((data) => {
+        dispatch(setStopLoading());
         setMosaic(data);
       })
       .catch((err) => {
+        dispatch(setStopLoading());
         console.log(err);
       });
-  }, [id]);
+  }, [dispatch, id]);
 
   return (
     <ProductCard
@@ -40,6 +46,7 @@ function ProductCardContainer() {
       handleAddToCart={handleAddToCart}
       handleClose={handleClose}
       isOpen={isOpen}
+      loading={loading}
     />
   );
 }

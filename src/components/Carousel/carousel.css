@@ -28,4 +28,8 @@
   .carousel-title {
     font-size: 20px;
   }
+  .carousel-caption {
+    padding-top: 1rem !important;
+    top: 10%;
+  }
 }
