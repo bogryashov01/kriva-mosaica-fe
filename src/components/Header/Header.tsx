@@ -90,7 +90,7 @@ function Header() {
               </Link>
             </Nav.Link>
             <Nav.Link href="#pricing">
-              <Link to="">
+              <Link to="/contacts">
                 <button className="button"> {t('header-tab-contact-button')}</button>
               </Link>
             </Nav.Link>

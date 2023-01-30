@@ -29,7 +29,9 @@ function HomePage(props: {
             <h3 className="wht">{t('what-we-create-title')}</h3>
             <hr></hr>
             <p className="wht">{t('what-we-create-text')}</p>
-            <button className="button button-white">{t('what-we-create-button')} </button>
+            <Link to="/what-in-box">
+              <button className="button button-white">{t('what-we-create-button')} </button>
+            </Link>
           </div>
           <div className="background-image wallMosaic"></div>
         </div>

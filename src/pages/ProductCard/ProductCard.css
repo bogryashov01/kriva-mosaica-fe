@@ -61,7 +61,7 @@
 
 @media (max-width: 500px) {
   .image {
-    /* width: 90%; */
+    width: 100%;
     margin: auto;
   }
   .product-button {

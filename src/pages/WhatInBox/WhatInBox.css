@@ -1,0 +1,28 @@
+.what-in-box {
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 50px 20px;
+}
+
+.what-in-box-content {
+  padding-top: 50px;
+}
+.what-in-box-text {
+  padding-top: 30px;
+}
+
+.what-in-box-image {
+  min-height: 400px;
+  background-image: url('/src/assets/what-in-box.png');
+}
+
+@media (max-width: 650px) {
+  .what-in-box {
+    grid-template-columns: 1fr;
+  }
+  .what-in-box-content {
+    grid-area: 1;
+  }
+}

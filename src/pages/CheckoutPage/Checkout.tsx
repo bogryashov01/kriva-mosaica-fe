@@ -105,7 +105,7 @@ function Checkout(props: {
                 <Field fullWidth name="lastName" component={TextField} label={t('last_name')} />
               </Box>
             </FormikStep>
-            <FormikStep label="Доставка">
+            <FormikStep label={t('delivery-tab')}>
               <h2 className="choose-delivery-title">{t('delivery-variant')}</h2>
               <div className="choose-delivery">
                 <Box className="input">

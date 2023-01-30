@@ -1,0 +1,39 @@
+.contacts {
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 20px;
+}
+
+.contacts-link {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.contacts-link a {
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #004f9f;
+}
+.contacts-link a:hover {
+  color: #f59c00;
+}
+
+.contacts-link a:last-child {
+  margin-bottom: 0px;
+}
+
+.contact-address {
+  margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+  .contacts {
+    grid-template-columns: 1fr;
+  }
+  .contacts-content {
+    text-align: center;
+  }
+}

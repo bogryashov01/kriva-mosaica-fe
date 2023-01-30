@@ -17,7 +17,7 @@ function Footer() {
           <Link to="/shop" className="footer-link">
             {t('header-tab-shop')}
           </Link>
-          <Link to="/class" className="footer-link">
+          <Link to="/master-class" className="footer-link">
             {t('header-tab-master-class')}
           </Link>
           <Link to="/contacts" className="footer-link">
