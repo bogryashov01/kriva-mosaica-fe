@@ -37,6 +37,10 @@ function ShopPageContainer() {
       name: t('category-fairy-animals-small'),
       value: 'CharivneZviriSmall',
     },
+    {
+      name: t('category-berehina'),
+      value: 'Berehina',
+    },
   ];
   const categoriesUk = [
     {

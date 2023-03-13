@@ -62,10 +62,21 @@ function ProductCard(props: {
             </div>
           </div>
           <div className="product-size-description">
-            <h4 className="center">{t('product-size-title')}</h4>
-            <h4 className="center">
-              {t('product-size-description')} {product.product_size} {t('product-size-value')}
-            </h4>
+            {product.product_description_en || product.product_description_ukr ? (
+              <h4 className="center">
+                {' '}
+                {i18n.language === 'en'
+                  ? product.product_description_en
+                  : product.product_description_ukr}
+              </h4>
+            ) : (
+              <>
+                <h4 className="center">{t('product-size-title')}</h4>
+                <h4 className="center">
+                  {t('product-size-description')} {product.product_size} {t('product-size-value')}
+                </h4>
+              </>
+            )}
           </div>
           <ModalContainer handleClose={handleClose} isOpen={isOpen} />
         </div>
