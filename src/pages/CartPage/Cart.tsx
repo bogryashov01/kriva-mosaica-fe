@@ -74,7 +74,7 @@ function Cart(props: {
           </Link>
         </div>
       ) : (
-        <p>NO items in cart go to the shop</p>
+        <h3 className="center blue no-items">{t('no-items-cart')}</h3>
       )}
     </div>
   );

@@ -61,6 +61,12 @@ function ProductCard(props: {
               <p>{t('delivery-ukrp')}</p>
             </div>
           </div>
+          <div className="product-size-description">
+            <h4 className="center">{t('product-size-title')}</h4>
+            <h4 className="center">
+              {t('product-size-description')} {product.product_size} {t('product-size-value')}
+            </h4>
+          </div>
           <ModalContainer handleClose={handleClose} isOpen={isOpen} />
         </div>
       )}

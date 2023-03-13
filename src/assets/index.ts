@@ -16,6 +16,7 @@ import carousel4 from './fon4.png';
 import carousel5 from './fon5.png';
 import carousel6 from './fon6.png';
 import carousel7 from './fon7.png';
+
 import boss from './boss.png';
 
 export const Logo = logo;

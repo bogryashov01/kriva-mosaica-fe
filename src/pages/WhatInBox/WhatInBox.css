@@ -9,13 +9,29 @@
 .what-in-box-content {
   padding-top: 50px;
 }
+.what-in-set-content {
+  padding-top: 50px;
+}
 .what-in-box-text {
   padding-top: 30px;
+}
+.set-text {
+  padding-left: 100px;
 }
 
 .what-in-box-image {
   min-height: 400px;
   background-image: url('/src/assets/what-in-box.png');
+}
+.set-image {
+  min-height: 400px;
+  background-image: url('/src/assets/set.png');
+}
+
+@media (max-width: 900px) {
+  .set-text {
+    padding-left: 20px;
+  }
 }
 
 @media (max-width: 650px) {

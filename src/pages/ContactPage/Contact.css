@@ -13,6 +13,7 @@
 
 .contacts-link a {
   margin-bottom: 20px;
+  width: fit-content;
   text-decoration: none;
   font-size: 20px;
   color: #004f9f;
@@ -28,6 +29,10 @@
 .contact-address {
   margin-top: 20px;
 }
+.social-media {
+  display: flex;
+  gap: 20px;
+}
 
 @media (max-width: 700px) {
   .contacts {
@@ -35,5 +40,10 @@
   }
   .contacts-content {
     text-align: center;
+  }
+  .contacts-link a {
+    margin-bottom: 20px;
+    width: fit-content;
+    margin: auto;
   }
 }

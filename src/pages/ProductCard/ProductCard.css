@@ -48,6 +48,9 @@
 .payment-block {
   margin-top: 60px;
 }
+.product-size-description {
+  padding-top: 40px;
+}
 
 @media (max-width: 1000px) {
   .product-item {
