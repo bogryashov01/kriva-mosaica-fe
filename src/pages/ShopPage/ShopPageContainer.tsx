@@ -63,6 +63,10 @@ function ShopPageContainer() {
       name: 'The fairy animals(small)',
       value: 'CharivneZviriSmall',
     },
+    {
+      name: 'Berehina',
+      value: 'Berehina',
+    },
   ];
 
   const handleAddToCart = (product: any) => {
