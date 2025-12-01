@@ -35,6 +35,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
 }
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  display: none;
+}
 
 @media (max-width: 1255px) {
   .products-container {

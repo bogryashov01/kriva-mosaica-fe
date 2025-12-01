@@ -59,9 +59,10 @@ function ShopPage(props: any) {
               price_ukr: number;
               description_en: string;
               description_ukr: string;
+              active: boolean;
             }) => {
               return (
-                <div className="card" key={item.id}>
+                <div className={item.active !== undefined && item.active === false ? 'card disabled' : 'card'} key={item.id}>
                   <Link to={`/product-item/${item.id}`} className="product-card-link">
                     <img src={item.imageUrl} alt="" />
                   </Link>

@@ -72,7 +72,7 @@ function Checkout(props: {
               firstName: '',
               lastName: '',
               phone: '',
-              poshta: '',
+              poshta: 'Новая почта',
               totalPrice: totalPrice,
             }}
             onSubmit={async (values) => {
@@ -90,7 +90,6 @@ function Checkout(props: {
                 i18n.language === 'en' ? '  €' : ' ₴'
               }</b>\n`;
               await onSubmitHandler(textMessage);
-              console.log('values', values);
             }}
             // validationSchema={validationSchema}
           >
@@ -110,13 +109,23 @@ function Checkout(props: {
               <div className="choose-delivery">
                 <Box className="input">
                   <label>
-                    <Field name="poshta" type="radio" value={'Новая почта' || ''} />
+                    <Field
+                      name="poshta"
+                      type="radio"
+                      value={'Новая почта' || ''}
+                      className="input-label"
+                    />
                     {t('delivery-np')}
                   </label>
                 </Box>
                 <Box className="input">
                   <label>
-                    <Field name="poshta" type="radio" value={'Укр Почта' || ''} />
+                    <Field
+                      name="poshta"
+                      type="radio"
+                      value={'Укр Почта' || ''}
+                      className="input-label"
+                    />
                     {t('delivery-ukrp')}
                   </label>
                 </Box>
@@ -170,7 +179,9 @@ function Checkout(props: {
                   <div>
                     <p>{i18n.language === 'en' ? item.description_en : item.description_ukr}</p>
                     <p>{i18n.language === 'en' ? item.name_en : item.name_ukr}</p>
-                    <p>К-сть: {item.quantity}</p>
+                    <p>
+                      {t('quantity')}: {item.quantity}
+                    </p>
                   </div>
                 </div>
                 <p> {i18n.language === 'en' ? item.price_en + '  €' : item.price_ukr + ' ₴'}</p>
@@ -184,7 +195,7 @@ function Checkout(props: {
               {totalPrice} {i18n.language === 'en' ? '  €' : ' ₴'}
             </p>
             <p>{t('delivery-tab')}</p>
-            <p className="end">Безкоштовно</p>
+            <p className="end">{t('deliveryTitle')}</p>
           </div>
           <hr></hr>
           <div className="price-container">

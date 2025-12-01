@@ -8,6 +8,8 @@ import {
   Carousel5,
   Carousel6,
   Carousel7,
+  Carousel8,
+  Carousel9,
 } from '../../assets';
 
 import './carousel.css';
@@ -41,6 +43,12 @@ function CarouselBlock() {
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={Carousel7} alt="First slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Carousel8} alt="First slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Carousel9} alt="First slide" />
         </Carousel.Item>
       </Carousel>
     </div>

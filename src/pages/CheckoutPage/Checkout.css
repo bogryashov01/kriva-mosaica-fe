@@ -53,6 +53,11 @@
 .input {
   margin-bottom: 20px;
 }
+
+.input-label {
+  margin-right: 10px;
+}
+
 .choose-delivery {
   display: flex;
   justify-content: space-between;

@@ -18,6 +18,10 @@ function ShopPageContainer() {
 
   const categories = [
     {
+      name: t('newYearsMiracles'),
+      value: 'newYearsMiracles',
+    },
+    {
       name: t('category-zodiac-signs'),
       value: 'Zodiacs',
     },
@@ -41,8 +45,45 @@ function ShopPageContainer() {
       name: t('category-berehina'),
       value: 'Berehina',
     },
+    {
+      name: t('himself-artist'),
+      value: 'Himselfartist',
+    },
+    {
+      name: t('merch'),
+      value: 'merch',
+    },
+    {
+      name: t('with-urkaine-in-heart'),
+      value: 'withUrkaineInHeart',
+    },
+
+    {
+      name: t('tropicu'),
+      value: 'Tropicu',
+    },
+    {
+      name: t('italianTemptation'),
+      value: 'italianTemptation',
+    },
+    {
+      name: t('easterDecoration'),
+      value: 'easterDecoration',
+    },
+    {
+      name: t('koi'),
+      value: 'koi',
+    },
+    {
+      name: t('pattern'),
+      value: 'pattern',
+    },
   ];
   const categoriesUk = [
+    {
+      name: "New Year's miracles",
+      value: 'newYearsMiracles',
+    },
     {
       name: 'Zodiac Signs',
       value: 'Zodiacs',
@@ -60,12 +101,44 @@ function ShopPageContainer() {
       value: 'CharivneZviri',
     },
     {
-      name: 'The fairy animals(small)',
+      name: 'The fairy animals (small)',
       value: 'CharivneZviriSmall',
     },
     {
       name: 'Berehina',
       value: 'Berehina',
+    },
+    {
+      name: 'Himself artist',
+      value: 'Himselfartist',
+    },
+    {
+      name: 'Author Merch',
+      value: 'merch',
+    },
+    {
+      name: 'With Ukraine in heart',
+      value: 'withUrkaineInHeart',
+    },
+    {
+      name: 'Tropics',
+      value: 'Tropicu',
+    },
+    {
+      name: 'Italian Temptation',
+      value: 'italianTemptation',
+    },
+    {
+      name: 'Easter decoration',
+      value: 'easterDecoration',
+    },
+    {
+      name: 'Fish',
+      value: 'koi',
+    },
+    {
+      name: 'Pattern',
+      value: 'pattern',
     },
   ];
 
@@ -104,7 +177,9 @@ function ShopPageContainer() {
         dispatch(setStopLoading());
         console.error(err);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <ShopPage
       handleAddToCart={handleAddToCart}

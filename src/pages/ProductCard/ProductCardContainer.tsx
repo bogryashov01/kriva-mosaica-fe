@@ -15,7 +15,6 @@ function ProductCardContainer() {
   const [mosaic, setMosaic] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const loading = useSelector((state: any) => state.loading.loading);
-  console.log(loading);
 
   const handleAddToCart = (product: any) => {
     dispatch(addToCart(product));
@@ -34,7 +33,6 @@ function ProductCardContainer() {
       })
       .catch((err) => {
         dispatch(setStopLoading());
-        console.log(err);
       });
   }, [dispatch, id]);
 

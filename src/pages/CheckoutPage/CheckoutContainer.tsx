@@ -35,7 +35,8 @@ function CheckoutContainer() {
   });
 
   // const chatId = '374952306';
-  const chatId = '237431198';
+  // Kriva_Mosaica_phone
+  const chatId = '6492717375';
   const onSubmitHandler = (formData: any) => {
     axios
       .post(

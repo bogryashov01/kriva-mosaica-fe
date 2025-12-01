@@ -14,7 +14,6 @@ function ProductCard(props: {
   loading: boolean;
 }) {
   const { product, handleAddToCart, loading, t, i18n, handleClose, isOpen } = props;
-
   return (
     <>
       {loading ? (
@@ -61,23 +60,32 @@ function ProductCard(props: {
               <p>{t('delivery-ukrp')}</p>
             </div>
           </div>
-          <div className="product-size-description">
-            {product.product_description_en || product.product_description_ukr ? (
+          {product?.category === 'merch' ? (
+            <div className="product-size-description">
               <h4 className="center">
-                {' '}
                 {i18n.language === 'en'
                   ? product.product_description_en
                   : product.product_description_ukr}
               </h4>
-            ) : (
-              <>
-                <h4 className="center">{t('product-size-title')}</h4>
+            </div>
+          ) : (
+            <div className="product-size-description">
+              {product.product_description_en || product.product_description_ukr ? (
                 <h4 className="center">
-                  {t('product-size-description')} {product.product_size} {t('product-size-value')}
+                  {i18n.language === 'en'
+                    ? product.product_description_en
+                    : product.product_description_ukr}
                 </h4>
-              </>
-            )}
-          </div>
+              ) : (
+                <>
+                  <h4 className="center">{t('product-size-title')}</h4>
+                  <h4 className="center">
+                    {t('product-size-description')} {product.product_size} {t('product-size-value')}
+                  </h4>
+                </>
+              )}
+            </div>
+          )}
           <ModalContainer handleClose={handleClose} isOpen={isOpen} />
         </div>
       )}

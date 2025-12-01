@@ -13,7 +13,6 @@ function Cart(props: {
 }) {
   const { t, i18n, cartItems, totalPrice, HandleIncrementButton, HandleDecrementButton } = props;
 
-  console.log(cartItems);
   return (
     <div className="cart">
       {cartItems.length > 0 ? (
