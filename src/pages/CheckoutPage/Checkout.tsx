@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Box, Card, CardContent } from '@material-ui/core';
 import { Field } from 'formik';
 import { TextField } from 'formik-material-ui';
-import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
@@ -23,17 +22,7 @@ function Checkout(props: {
   phone: any;
   handleChange: any;
 }) {
-  const {
-    i18n,
-    handleChange,
-    t,
-    cartItems,
-    phone,
-    cartTotal,
-    totalPrice,
-    onSubmitHandler,
-    totalCart,
-  } = props;
+  const { i18n, handleChange, t, cartItems, phone, cartTotal, totalPrice, onSubmitHandler, totalCart } = props;
   const navigate = useNavigate();
 
   const redirect = () => {
@@ -86,9 +75,7 @@ function Checkout(props: {
               textMessage += `<b>Поштовий перевізник : ${values.poshta} </b>\n`;
               textMessage += `<b>Номер відділення : ${values.delivery_number} </b>\n`;
               textMessage += `<b>Замовлення: </b>${JSON.stringify(totalCart)}\n`;
-              textMessage += `<b>Загальна ціна : ${values.totalPrice} ${
-                i18n.language === 'en' ? '  €' : ' ₴'
-              }</b>\n`;
+              textMessage += `<b>Загальна ціна : ${values.totalPrice} ${i18n.language === 'en' ? '  €' : ' ₴'}</b>\n`;
               await onSubmitHandler(textMessage);
             }}
             // validationSchema={validationSchema}
@@ -109,23 +96,13 @@ function Checkout(props: {
               <div className="choose-delivery">
                 <Box className="input">
                   <label>
-                    <Field
-                      name="poshta"
-                      type="radio"
-                      value={'Новая почта' || ''}
-                      className="input-label"
-                    />
+                    <Field name="poshta" type="radio" value={'Новая почта'} className="input-label" />
                     {t('delivery-np')}
                   </label>
                 </Box>
                 <Box className="input">
                   <label>
-                    <Field
-                      name="poshta"
-                      type="radio"
-                      value={'Укр Почта' || ''}
-                      className="input-label"
-                    />
+                    <Field name="poshta" type="radio" value="Укр Почта" className="input-label" />
                     {t('delivery-ukrp')}
                   </label>
                 </Box>
@@ -146,12 +123,7 @@ function Checkout(props: {
                 <Field fullWidth name="country" component={TextField} label={t('country')} />
               </Box>
               <Box className="input">
-                <Field
-                  fullWidth
-                  name="delivery_number"
-                  component={TextField}
-                  label={t('post-number')}
-                />
+                <Field fullWidth name="delivery_number" component={TextField} label={t('post-number')} />
               </Box>
             </FormikStep>
             <FormikStep label={t('payment-tab')}>

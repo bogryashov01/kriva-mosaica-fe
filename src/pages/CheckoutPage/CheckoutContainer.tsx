@@ -26,13 +26,10 @@ function CheckoutContainer() {
     0,
   );
 
-  const totalCart: { name: any; quantity: any }[] = [];
-  const cart = cartItems.map((item: any) => {
-    totalCart.push({
-      name: i18n.language === 'en' ? item.name_en : item.name_ukr,
-      quantity: item.quantity,
-    });
-  });
+  const totalCart = cartItems.map((item: any) => ({
+    name: i18n.language === 'en' ? item.name_en : item.name_ukr,
+    quantity: item.quantity,
+  }));
 
   // const chatId = '374952306';
   // Kriva_Mosaica_phone
